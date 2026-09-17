@@ -1,4 +1,6 @@
 body {
+  margin: 0;
+  min-height: 100vh;
   background-image: url('https://github.com/unflowered/unflowered.github.io/blob/main/img/flowering-rain.png?raw=true');
   background-repeat: no-repeat;
   background-attachment: fixed;  
