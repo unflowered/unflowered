@@ -1,32 +1,44 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    	<link rel = "icon" href = "https://github.com/unflowered/unflowered.github.io/blob/main/img/flower.png?raw=true" type = "image/x-icon">  
-    <meta charset="utf-8">
-    <script src="https://kit.fontawesome.com/ac2e4403ae.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>.˖.⋆｡˚⋆⋆｡ﾟ｡⋆｡ﾟ☾</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>.˖.⋆｡˚⋆⋆｡ﾟ｡⋆｡ﾟ☾</title>
+<link rel = "icon" href = "https://github.com/unflowered/unflowered/blob/main/img/mark.jpg?raw=true" type = "image/x-icon">  
+<link rel="stylesheet" href="style.css">
+</head>
+<script>
+  const base = ".˖｡˚⋆⋆｡ﾟ｡⋆｡ﾟ☾";
+  let current = base;
+  setInterval(() => {
+    current = current.slice(-1) + current.slice(0, -1);
+    document.title = current;
+  }, 250);
+</script>
+<body>
 
-  </head>
-  <body>
-<div class="box">
-  <h1>unflowered</h1>
-<ul>
-<li><a href="https://www.youtube.com/@unflower" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-<li><a href="https://twitter.com/unfiower" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-<li><a href="https://www.instagram.com/unflowered/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-<li><a href="https://open.spotify.com/user/im.a.lazy.kunt" target="_blank"><i class="fa-brands fa-spotify"></i></a></li>
-<li><a href="https://steamcommunity.com/id/unflower/" target="_blank"><i class="fa-brands fa-steam"></i></a></li>
-</ul>
-</div>
-        <script>
-      const base = ".˖.⋆｡˚⋆⋆｡ﾟ｡⋆｡ﾟ☾";
-      let current = base;
+  <div class="board">
 
-      setInterval(() => {
-        current = current.slice(-1) + current.slice(0, -1);
-        document.title = current;
-      }, 250);
-    </script>
+    <nav class="links">
+      <a id="title" href="https://unflowe.red">unflowered</a>
+      <a id="twitter" href="https://twitter.com/unfiower" target="_blank">twitter</a>
+      <a id="instagram" href="https://www.instagram.com/unflowered/" target="_blank">instagram</a>
+      <a id="substack" href="https://substack.com/@unflower" target="_blank">substack</a>
+      <a id="spotify" href="https://open.spotify.com/user/im.a.lazy.kunt" target="_blank">spotify</a>
+      <a id="steam" href="https://steamcommunity.com/id/unflower/" target="_blank">steam</a>
+      <a id="roblox" href="https://www.roblox.com/vi/users/63252318/profile" target="_blank">roblox</a>
+      <a id="youtube" href="https://www.youtube.com/@unflower" target="_blank">youtube</a>
+      <a id="soundcloud" href="https://soundcloud.com/unflowered" target="_blank">soundcloud</a>
+    </nav>
+
+    <div class="gallery">
+      <figure id="img1">
+        <a href="https://www.youtube.com/watch?v=OjsDLvybaM0" target="_blank">
+          <img src="https://github.com/unflowered/unflowered/blob/main/img/angel.jpg?raw=true">
+        </a>
+      </figure>
+    </div>
+
+  </div>
+
 </body>
 </html>
