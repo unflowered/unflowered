@@ -13,17 +13,53 @@
     current = current.slice(-1) + current.slice(0, -1);
     document.title = current;
   }, 250);
-    function toggleAbout() {
+  function toggleAbout() {
     document.querySelector('.gallery').classList.toggle('hidden');
     document.querySelectorAll('.links a:not(#about)').forEach(el => el.classList.toggle('hidden'));
     document.getElementById('about-section').classList.toggle('visible');
   }
+  function toggleRoblox() {
+    document.querySelector('.gallery').classList.toggle('hidden');
+    document.querySelectorAll('.links > a:not(#roblox)').forEach(el => el.classList.toggle('hidden'));
+    document.getElementById('roblox-section').classList.toggle('visible');
+  }
+  function toggleEvents() {
+    document.querySelector('.gallery').classList.toggle('hidden');
+    document.querySelectorAll('.links > a:not(#events)').forEach(el => el.classList.toggle('hidden'));
+    document.getElementById('events-section').classList.toggle('visible');
+  }
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('#twitter, #instagram, #steam, #substack, #spotify, #roblox, #youtube, #soundcloud, #twitch, #events');
+  const cols = 4;
+  const rows = 3;
+  const cellWidth = 90 / cols;
+  const cellHeight = 90 / rows;
+
+  const cells = [];
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      cells.push({ row: r, col: c });
+    }
+  }
+
+  cells.sort(() => Math.random() - 0.5);
+
+  links.forEach((link, i) => {
+    const cell = cells[i];
+    const top = cell.row * cellHeight + Math.random() * (cellHeight * 0.5);
+    const left = cell.col * cellWidth + Math.random() * (cellWidth * 0.5);
+    link.style.top = `${top}%`;
+    link.style.left = `${left}%`;
+  });
+});
 </script>
 
 <body>
 
   <div class="board">
-
     <nav class="links">
       <a id="title" href="javascript:location.reload()">unflowered</a>
       <a id="twitter" href="https://twitter.com/unfiower" target="_blank">twitter</a>
@@ -31,16 +67,78 @@
       <a id="substack" href="https://substack.com/@unflower" target="_blank">substack</a>
       <a id="spotify" href="https://open.spotify.com/user/im.a.lazy.kunt" target="_blank">spotify</a>
       <a id="steam" href="https://steamcommunity.com/id/unflower/" target="_blank">steam</a>
-      <a id="roblox" href="https://www.roblox.com/vi/users/63252318/profile" target="_blank">roblox</a>
+      <a id="roblox" href="#" onclick="toggleRoblox(); return false;">roblox</a>
+        <div id="roblox-section" class="about-section">
+          <p>if you really want my roblox i guess</p>
+          <p>i have three accounts :p</p>
+          <p><a href="https://www.roblox.com/users/63252318/profile" target="_blank">@quac_k</a></p>
+          <p><a href="https://www.roblox.com/users/17479196/profile" target="_blank">@aesynctx</a></p>
+          <p><a href="https://www.roblox.com/users/112463/profile" target="_blank">@vietnameseabg</a></p>
+        </div>
       <a id="youtube" href="https://www.youtube.com/@unflower" target="_blank">youtube</a>
       <a id="soundcloud" href="https://soundcloud.com/unflowered" target="_blank">soundcloud</a>
+      <a id="twitch" href="https://www.twitch.tv/unflowered" target="_blank">twitch</a>
       <a id="about" href="#" onclick="toggleAbout(); return false;">ryan</a>
-      <div id="about-section" class="about-section">
-        <p>hi im unflowered or ryan depending on who youre asking</p>
-        <p>fun fact: im left handed</p>
-        <p>ryan@unflowe.red is the best way to reach me</p>
-        <p>or if you have my number that works too. i respond fast</p>
-        
+        <div id="about-section" class="about-section">
+          <p>hi im unflowered or ryan depending on who youre asking</p>
+          <p>fun fact: im left handed</p>
+          <p>ryan@unflowe.red is the best way to reach me</p>
+          <p>or if you have my number that works too. i respond fast</p>   
+        </div>
+      <a id="events" href="#" onclick="toggleEvents(); return false;">concerts</a>
+        <div id="events-section" class="about-section">
+          <p>spent like 4k on tickets alone</p>
+          <p>see you guys around</p>
+          <ul>
+            <li><span class="date">December 11, 2026</span> <span class="artist">frost children LA</span> <span class="note"></span></li>
+            <li><span class="date">November 20, 2026</span> <span class="artist">lucy bedroque LA</span> <span class="note"></span></li>
+            <li><span class="date">October 9–11, 2026</span> <span class="artist">niteharts SD</span> <span class="note"></span></li>
+            <li><span class="date">August 2, 2026</span> <span class="artist">hard summer LA</span> <span class="note">finally hung out with my friend miya after knowing her for 6 years</span></li>
+            <li><span class="date">July 17, 2026</span> <span class="artist">lil shine SF</span> <span class="note">the dj fucking sucks im so sorry jasper #freelilshine</span></li>
+            <li><span class="date">July 14, 2026</span> <span class="artist">kuru LA</span> <span class="note">#wasia</span></li>
+            <li><span class="date">July 3, 2026</span> <span class="artist">ilykimchi SJ</span> <span class="note">chill sidequest</span></li>
+            <li><span class="date">June 26, 2026</span> <span class="artist">underscores afterparty SF</span> <span class="note">last minute pull</span></li>
+            <li><span class="date">June 15, 2026</span> <span class="artist">jane remover SF</span> <span class="note">i get so gay off that oomf</span></li>
+            <li><span class="date">June 12, 2026</span> <span class="artist">gryffin SF</span> <span class="note">meh</span></li>
+            <li><span class="date">June 2, 2026</span> <span class="artist">bixby SF</span> <span class="note">good music</span></li>
+            <li><span class="date">May 30, 2026</span> <span class="artist">seven lions SF</span> <span class="note">meh</span></li>
+            <li><span class="date">May 2, 2026</span> <span class="artist">dabin stanford</span> <span class="note">holy shit that was boring</span></li>
+            <li><span class="date">April 22, 2026</span> <span class="artist">lucy bedroque SF</span> <span class="note">ucla show was better</span></li>
+            <li><span class="date">April 11, 2026</span> <span class="artist">sebii kimj riot SF</span> <span class="note">totally random but it was fun</span></li>
+            <li><span class="date">April 10, 2026</span> <span class="artist">pryvt SF</span> <span class="note">chill</span></li>
+            <li><span class="date">April 3–4, 2026</span> <span class="artist">isoxo SF</span> <span class="note">blacked out day 1, couldnt get back in floor day 2…. but syzy iso kuru on a song??</span></li>
+            <li><span class="date">March 14, 2026</span> <span class="artist">excision SF</span> <span class="note">ehhh</span></li>
+            <li><span class="date">February 28, 2026</span> <span class="artist">armnhmr SF</span> <span class="note">i actually ran into people that i wanted to run into for once</span></li>
+            <li><span class="date">February 8, 2026</span> <span class="artist">nextworld SF</span> <span class="note">solo queue</span></li>
+            <li><span class="date">January 28, 2026</span> <span class="artist">glaive SF</span> <span class="note">i was still going THROUGH IT but it was fun, i did leave 5 songs early to cry though</span></li>
+            <li><span class="date">January 24, 2026</span> <span class="artist">ray volpe SF</span> <span class="note">alright..</span></li>
+            <li><span class="date">November 28–29, 2025</span> <span class="artist">give thanks SJ</span> <span class="note">i was going THROUGH IT</span></li>
+            <li><span class="date">October 28, 2025</span> <span class="artist">purple kiss SJ</span> <span class="note">we were the last stop before they disbanded</span></li>
+            <li><span class="date">October 25, 2025</span> <span class="artist">subtronics SF</span> <span class="note">roll of doom</span></li>
+            <li><span class="date">October 16, 2025</span> <span class="artist">corey lingo SF</span> <span class="note">BACK WHEN YOU CARED HEARING YOU SHEDDDDDDD</span></li>
+            <li><span class="date">October 9–12, 2025</span> <span class="artist">niteharts SD</span> <span class="note">ended up kissing the prettiest girl ever</span></li>
+            <li><span class="date">September 24, 2025</span> <span class="artist">2hollis SF</span> <span class="note">fun awesome</span></li>
+            <li><span class="date">September 21, 2025</span> <span class="artist">wisp SF</span> <span class="note">changed the trajectory of my life</span></li>
+            <li><span class="date">August 16, 2025</span> <span class="artist">nikojean LA</span> <span class="note">thanks goof for the invite it was fun</span></li>
+            <li><span class="date">April 25, 2025</span> <span class="artist">daw@ucla</span> <span class="note">the BEST concert i've ever been to</span></li>
+            <li><span class="date">February 1, 2025</span> <span class="artist">excision SF</span> <span class="note">a girl apporached me and tried to ravebae me</span></li>
+            <li><span class="date">January 15, 2025</span> <span class="artist">glaive SF</span> <span class="note">GOT TOWED XDDDDDD</span></li>
+            <li><span class="date">December 8, 2024</span> <span class="artist">isoknock sd</span> <span class="note">i went just for glaive then left 10mins after isoknock came out</span></li>
+            <li><span class="date">November 22, 2024</span> <span class="artist">isoknock sf</span> <span class="note">first solo rave</span></li>
+            <li><span class="date">November 1–2, 2024</span> <span class="artist">bixby SF</span> <span class="note">I WONT LIE YOUVE BEEN ALWAYS ON MY MIND</span></li>
+            <li><span class="date">October 12, 2024</span> <span class="artist">zedd SF</span> <span class="note">cried almost the whole time</span></li>
+            <li><span class="date">October 1, 2024</span> <span class="artist">lamp SF</span> <span class="note">my view sucked</span></li>
+            <li><span class="date">September 27, 2024</span> <span class="artist">endie, chrmng LA</span> <span class="note">i met bixby joon and starfall. holy asian trinity</span></li>
+            <li><span class="date">September 26, 2024</span> <span class="artist">beabadoobee SF</span> <span class="note">parking was so bad i missed all the openers</span></li>
+            <li><span class="date">June 15, 2024</span> <span class="artist">pryvt LA</span> <span class="note">i walked by yel</span></li>
+            <li><span class="date">March 15, 2024</span> <span class="artist">ive oakland</span> <span class="note">oakland arena is a nice venue</span></li>
+            <li><span class="date">March 8, 2024</span> <span class="artist">ericdoa SF</span> <span class="note">first concert where i actually listneed to the artist</span></li>
+            <li><span class="date">November 22, 2023</span> <span class="artist">give thanks SF</span> <span class="note">it was alright i enjoyed being with my friends</span></li>
+            <li><span class="date">November 3, 2023</span> <span class="artist">gryffin SF</span> <span class="note">first rave</span></li>
+            <li><span class="date">October 26, 2023</span> <span class="artist">stayc SF</span> <span class="note">stayc girls its going down</span></li>
+            <li><span class="date">June 24, 2023</span> <span class="artist">twice HTX</span> <span class="note">first concert ever and i was visiting family out of state</span></li>
+          </ul>
+
 </div>
     </nav>
 
@@ -51,7 +149,6 @@
         </a>
       </figure>
     </div>
-
   </div>
 
 </body>
