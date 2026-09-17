@@ -13,7 +13,13 @@
     current = current.slice(-1) + current.slice(0, -1);
     document.title = current;
   }, 250);
+    function toggleAbout() {
+    document.querySelector('.gallery').classList.toggle('hidden');
+    document.querySelectorAll('.links a:not(#about)').forEach(el => el.classList.toggle('hidden'));
+    document.getElementById('about-section').classList.toggle('visible');
+  }
 </script>
+
 <body>
 
   <div class="board">
@@ -28,6 +34,14 @@
       <a id="roblox" href="https://www.roblox.com/vi/users/63252318/profile" target="_blank">roblox</a>
       <a id="youtube" href="https://www.youtube.com/@unflower" target="_blank">youtube</a>
       <a id="soundcloud" href="https://soundcloud.com/unflowered" target="_blank">soundcloud</a>
+      <a id="about" href="#" onclick="toggleAbout(); return false;">ryan</a>
+      <div id="about-section" class="about-section">
+        <p>hi im unflowered or ryan depending on who youre asking</p>
+        <p>fun fact: im left handed</p>
+        <p>ryan@unflowe.red is the best way to reach me</p>
+        <p>or if you have my number that works too. i respond fast</p>
+        
+</div>
     </nav>
 
     <div class="gallery">
