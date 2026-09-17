@@ -53,6 +53,15 @@ html, body {
   font-size: 1rem;
   line-height: 1.5;
 }
+.about-section a {
+  position: static;
+  color: #e9e9e9;
+  text-decoration: underline;
+}
+
+.about-section a:hover {
+  color: #ffffff;
+}
 
 .about-section.visible {
   display: block;
@@ -65,8 +74,69 @@ html, body {
 #substack   { top: 170px; left: 45%; }
 #spotify    { top: 200px; left: 72%; }
 #roblox     { top: 260px; left: 20%; }
+#twitch     { top: 300px; left: 55%; }
 #youtube    { top: 250px; left: 55%; }
 #soundcloud { top: 290px; left: 35%; }
+
+#events-section {
+  left: 5%;
+  right: 5%;
+  max-width: 800px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+#events-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#events-section li {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+#events-section .date {
+  color: #b5b5b5;
+  font-size: 0.85rem;
+  margin-right: 8px;
+}
+
+#events-section .artist {
+  color: #f0f0f0;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+#events-section .note {
+  color: #c9c9c9;
+  font-weight: 300;
+}
+
+#events-section {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.3) transparent;
+}
+
+#events-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+#events-section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#events-section::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 3px;
+}
+
+#events-section::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.5);
+}
 
 /* image layout — asymmetric, not a grid */
 .gallery {
@@ -110,8 +180,8 @@ html, body {
 #img1 {
   top: 8%;
   left: 0%;
-  width: 477px;
-  height: 348px;
+  width: 600px;
+  height: 500px;
 }
 
 
