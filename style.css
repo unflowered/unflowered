@@ -37,6 +37,27 @@ html, body {
   transform: translateY(-2px);
 }
 
+#about { top: 0px; left: 15%; }
+
+.hidden {
+  display: none !important;
+}
+
+.about-section {
+  display: none;
+  position: absolute;
+  top: 360px;
+  left: 5%;
+  max-width: 500px;
+  color: #e9e9e9;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.about-section.visible {
+  display: block;
+}
+
 #title      { top: 0;    right: 2%;  font-size: 2rem; }
 #twitter    { top: 90px;  left: 30%; }
 #instagram  { top: 80px;  left: 62%; }
