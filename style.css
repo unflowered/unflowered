@@ -16,7 +16,6 @@ html, body {
   padding: 60px 40px 80px;
 }
 
-/* scattered link labels */
 .links {
   position: relative;
   height: 340px;
@@ -93,7 +92,6 @@ html, body {
   margin: 0;
 }
 
-/* name + date row, location + notes below */
 #events-section .entry {
   margin-bottom: 14px;
   padding-bottom: 14px;
@@ -128,7 +126,6 @@ html, body {
   text-transform: lowercase;
 }
 
-/* type sits on the left, location on the right */
 #events-section .entry-type {
   order: 1;
   font-size: 0.9rem;
@@ -176,7 +173,6 @@ html, body {
   background: rgba(255,255,255,0.5);
 }
 
-/* image layout — asymmetric, not a grid */
 .gallery {
   position: relative;
   width: 100%;
@@ -214,7 +210,6 @@ html, body {
   letter-spacing: 0.5px;
 }
 
-/* small image, top-left, above the other two */
 #img1 {
   top: 8%;
   left: 0%;
