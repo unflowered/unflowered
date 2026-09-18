@@ -73,7 +73,7 @@
     "name": "bixby",
     "date": "June 2, 2026",
     "location": "San Francisco, California",
-    "type": "rave",
+    "type": "concert",
     "notes": "good music"
   },
   {
@@ -108,14 +108,14 @@
     "name": "pryvt",
     "date": "April 10, 2026",
     "location": "San Francisco, California",
-    "type": "rave",
-    "notes": "chill"
+    "type": "concert",
+    "notes": "it was alright i like pryvt"
   },
   {
     "name": "isoxo",
     "date": "April 3–4, 2026",
     "location": "San Francisco, California",
-    "type": "festival",
+    "type": "rave",
     "notes": "blacked out day 1, couldnt get back in floor day 2…. but syzy iso kuru on a song??"
   },
   {
@@ -136,7 +136,7 @@
     "name": "chiabee, hyejin (nextworld)",
     "date": "February 8, 2026",
     "location": "Los Angeles, California",
-    "type": "rave",
+    "type": "concert",
     "notes": "solo queue"
   },
   {
@@ -178,7 +178,7 @@
     "name": "corey lingo",
     "date": "October 16, 2025",
     "location": "San Francisco, California",
-    "type": "rave",
+    "type": "concert",
     "notes": "BACK WHEN YOU CARED HEARING YOU SHEDDDDDDD"
   },
   {
@@ -210,11 +210,11 @@
     "notes": "thanks goof for the invite it was fun"
   },
   {
-    "name": "daw",
+    "name": "daw @ ucla",
     "date": "April 25, 2025",
     "location": "Los Angeles, California",
     "type": "concert",
-    "notes": "the BEST concert i've ever been to"
+    "notes": "the most memorable concert i've been to. thanks sunny n frendi for giving me backstage"
   },
   {
     "name": "excision",
