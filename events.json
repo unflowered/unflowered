@@ -31,14 +31,14 @@
     "name": "lil shine",
     "date": "July 17, 2026",
     "location": "San Francisco, California",
-    "type": "rave",
+    "type": "concert",
     "notes": "the dj fucking sucks im so sorry jasper #freelilshine"
   },
   {
     "name": "kuru",
     "date": "July 14, 2026",
     "location": "Los Angeles, California",
-    "type": "rave",
+    "type": "concert",
     "notes": "#wasia"
   },
   {
@@ -157,7 +157,7 @@
     "name": "give thanks",
     "date": "November 28–29, 2025",
     "location": "San Jose, California",
-    "type": "festival",
+    "type": "rave",
     "notes": "i was going THROUGH IT"
   },
   {
@@ -299,6 +299,13 @@
     "location": "San Francisco, California",
     "type": "concert",
     "notes": "first concert where i actually listneed to the artist"
+  },
+  {
+    "name": "countdown",
+    "date": "december 30-31, 2023",
+    "location": "San Bernardino, California",
+    "type": "rave",
+    "notes": "wow that sucked"
   },
   {
     "name": "give thanks",
