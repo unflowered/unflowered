@@ -1,2 +1,5 @@
 # unflowe.red
-i bought this domain for fun when i was 16 to aura farm in class
+originally bought this in 2021 because i wanted to look cool
+but web development is fun
+shoutout claude
+free lil shine, jodyboof, and migo lee
