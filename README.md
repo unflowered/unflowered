@@ -1,5 +1,2 @@
 # unflowe.red
-originally bought this in 2021 because i wanted to look cool
-but web development is fun
-shoutout claude
-# free lil shine, jodyboof, and migo lee
+originally bought in 2021 because i wanted to aura farm, but ended up learning that i like web development. this is a fun little project on the side.
