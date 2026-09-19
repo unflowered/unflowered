@@ -30,7 +30,7 @@
       document.title = current;
     }, 250);
 
-    // toggles so it doesnt make a new page when you click the links
+    // so it doesnt make a new page when you click the links
     function toggleAbout() {
       document.querySelector('.gallery').classList.toggle('hidden');
       document.querySelectorAll('.links a:not(#about)').forEach(el => el.classList.toggle('hidden'));
@@ -72,8 +72,7 @@
       });
     }
 
-    // my concert database is in a separate file so i can update that without having to 
-    // scroll through blocks of code in here
+    // concert tab has a lot of content, pulls from events.json
     function loadEvents() {
       fetch('events.json')
         .then(res => res.json())
@@ -96,7 +95,7 @@
         .catch(err => console.error('couldnt load events.json:', err));
     }
 
-    // just so i can go to nav.html whenever i want to update without having to reload the whole page
+    // same concept as the concert tab, pulls from nav.html
     fetch('nav.html')
       .then(res => res.text())
       .then(html => {
