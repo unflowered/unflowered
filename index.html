@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>.˖.⋆｡˚⋆⋆｡ﾟ｡⋆｡ﾟ☾</title>
   <link rel="icon" href="https://github.com/unflowered/unflowered/blob/main/img/mark.jpg?raw=true" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
@@ -33,44 +34,75 @@
     // so it doesnt make a new page when you click the links
     function toggleAbout() {
       document.querySelector('.gallery').classList.toggle('hidden');
-      document.querySelectorAll('.links a:not(#about)').forEach(el => el.classList.toggle('hidden'));
+      document.querySelectorAll('.links > a').forEach(el => el.classList.toggle('hidden'));
       document.getElementById('about-section').classList.toggle('visible');
     }
     function toggleRoblox() {
       document.querySelector('.gallery').classList.toggle('hidden');
-      document.querySelectorAll('.links > a:not(#roblox)').forEach(el => el.classList.toggle('hidden'));
+      document.querySelectorAll('.links > a').forEach(el => el.classList.toggle('hidden'));
       document.getElementById('roblox-section').classList.toggle('visible');
     }
     function toggleEvents() {
       document.querySelector('.gallery').classList.toggle('hidden');
-      document.querySelectorAll('.links > a:not(#events)').forEach(el => el.classList.toggle('hidden'));
+      document.querySelectorAll('.links > a').forEach(el => el.classList.toggle('hidden'));
       document.getElementById('events-section').classList.toggle('visible');
     }
 
-    // scatters buttons across the page
+    // scatters buttons across the page without letting any of them overlap
     function scatterLinks() {
-      const links = document.querySelectorAll('#twitter, #instagram, #steam, #spotify, #roblox, #youtube, #soundcloud, #twitch, #events');
-      const cols = 4;
-      const rows = 3;
-      const cellWidth = 90 / cols;
-      const cellHeight = 90 / rows;
+      const container = document.querySelector('.links');
+      const links = [...document.querySelectorAll('#twitter, #instagram, #steam, #spotify, #roblox, #youtube, #soundcloud, #twitch, #events')];
+      const fixed = [...document.querySelectorAll('#title, #about')];
+      const W = container.clientWidth;
+      const H = container.clientHeight;
+      const gap = 12; // minimum space between any two links, in px
 
-      const cells = [];
-      for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
-          cells.push({ row: r, col: c });
+      const box = el => ({ x: el.offsetLeft, y: el.offsetTop, w: el.offsetWidth, h: el.offsetHeight });
+      const overlaps = (a, b) =>
+        a.x < b.x + b.w + gap && b.x < a.x + a.w + gap &&
+        a.y < b.y + b.h + gap && b.y < a.y + a.h + gap;
+
+      // try a few full layouts, keep the first one where nothing touches
+      let best = null;
+      for (let attempt = 0; attempt < 50 && !best; attempt++) {
+        const placed = fixed.map(box);
+        const spots = [];
+        let ok = true;
+
+        for (const link of links) {
+          const w = link.offsetWidth;
+          const h = link.offsetHeight;
+          let spot = null;
+          for (let tries = 0; tries < 300; tries++) {
+            const s = { x: Math.random() * Math.max(0, W - w), y: Math.random() * Math.max(0, H - h), w, h };
+            if (!placed.some(p => overlaps(s, p))) { spot = s; break; }
+          }
+          if (!spot) { ok = false; break; }
+          placed.push(spot);
+          spots.push(spot);
         }
+        if (ok) best = spots;
       }
-      cells.sort(() => Math.random() - 0.5);
+      if (!best) return; // screen too small to fit everything apart, keep the old layout
 
       links.forEach((link, i) => {
-        const cell = cells[i];
-        const top = cell.row * cellHeight + Math.random() * (cellHeight * 0.5);
-        const left = cell.col * cellWidth + Math.random() * (cellWidth * 0.5);
-        link.style.top = `${top}%`;
-        link.style.left = `${left}%`;
+        link.style.left = `${best[i].x / W * 100}%`;
+        link.style.top = `${best[i].y / H * 100}%`;
       });
     }
+
+    // rescatter if the window width changes so links dont collide after resizing
+    let lastWidth = window.innerWidth;
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (window.innerWidth === lastWidth) return;
+        if (document.querySelector('.about-section.visible')) return;
+        lastWidth = window.innerWidth;
+        scatterLinks();
+      }, 200);
+    });
 
     // concert tab has a lot of content, pulls from events.json
     function loadEvents() {
