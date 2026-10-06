@@ -45,7 +45,7 @@ html, body {
 .about-section {
   display: none;
   position: absolute;
-  top: 360px;
+  top: 40px;
   left: 5%;
   max-width: 500px;
   color: #000000;
@@ -89,6 +89,10 @@ html, body {
   left: 5%;
   right: 5%;
   max-width: 800px;
+}
+
+/* only this part scrolls, so the back button stays put above it */
+#events-section .events-scroll {
   max-height: 400px;
   overflow-y: auto;
   padding-right: 10px;
@@ -159,25 +163,25 @@ html, body {
   margin-top: 4px;
 }
 
-#events-section {
+#events-section .events-scroll {
   scrollbar-width: thin;
   scrollbar-color: rgba(255,255,255,0.3) transparent;
 }
 
-#events-section::-webkit-scrollbar {
+#events-section .events-scroll::-webkit-scrollbar {
   width: 6px;
 }
 
-#events-section::-webkit-scrollbar-track {
+#events-section .events-scroll::-webkit-scrollbar-track {
   background: transparent;
 }
 
-#events-section::-webkit-scrollbar-thumb {
+#events-section .events-scroll::-webkit-scrollbar-thumb {
   background: rgba(255,255,255,0.3);
   border-radius: 3px;
 }
 
-#events-section::-webkit-scrollbar-thumb:hover {
+#events-section .events-scroll::-webkit-scrollbar-thumb:hover {
   background: rgba(255,255,255,0.5);
 }
 
